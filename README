@@ -1,15 +1,7 @@
+# HyperJSON
 A simple html page written in JSON:
+    
     {
-        "javascript": [
-            "https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js",
-        ],
-        
-        "css": [
-            "./css/lib/blueprint/src/reset.css",
-            "./css/lib/blueprint/src/ie.css",
-            "./css/app/layout.css"
-        ],
-        
         "meta": [
             {
                 "charset": "UTF-8"
@@ -21,6 +13,16 @@ A simple html page written in JSON:
                 "name": "description",
                 "content": "Magical snake oil"
             }
+        ],
+        
+        "javascript": [
+            "https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js",
+        ],
+        
+        "css": [
+            "./css/lib/blueprint/src/reset.css",
+            "./css/lib/blueprint/src/ie.css",
+            "./css/app/layout.css"
         ],
         
         "title": "An Awesome page served in JSON!",
