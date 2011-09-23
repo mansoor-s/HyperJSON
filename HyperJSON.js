@@ -1,6 +1,6 @@
-var JSONConverter;
+var HyperJSON;
 (function() {
-    JSONConverter = function ( json ) {
+    HyperJSON = function ( json ) {
         if ( json instanceof Object ) {
             // assume it is allready an object
             return getHtml( json )
@@ -89,17 +89,27 @@ var JSONConverter;
                         markup += prop + '="' + elem[ prop ] + '" ';
                     }
                 }
-                if ( has_content ) {
-                    markup += '>';
-                    markup += parseContent( elem.content );
-                    markup += '</' + elem.node + '>';
-                } else {
+                
+                if (noEndingNodes.indexOf( elem.node ) === -1) {
                     markup += '/>';
+                } else {
+                    markup += '>';
                 }
+                
+                if ( has_content ) {
+                    markup += parseContent( elem.content );
+                }
+                markup += '</' + elem.node + '>';
             } else {
                 throw "Bad JSON!"
             }
         });
         return markup;
     }
+    
+    //These nodes do not have an end tag
+    var noEndingNodes = [
+        'img',
+        'input'
+    ];
 })();
